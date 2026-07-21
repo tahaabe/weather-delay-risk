@@ -1,0 +1,25 @@
+[2026-07-21T13:39:51.092+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-21T13:39:51.814+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_delay_risk_pipeline.fetch_flights scheduled__2026-07-20T06:00:00+00:00 [queued]>
+[2026-07-21T13:39:51.835+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_delay_risk_pipeline.fetch_flights scheduled__2026-07-20T06:00:00+00:00 [queued]>
+[2026-07-21T13:39:51.845+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-07-21T13:39:51.885+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_flights> on 2026-07-20 06:00:00+00:00
+[2026-07-21T13:39:52.150+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_delay_risk_pipeline', 'fetch_flights', 'scheduled__2026-07-20T06:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_dag.py', '--cfg-path', '/tmp/tmpdrpw7jsj']
+[2026-07-21T13:39:52.160+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask fetch_flights
+[2026-07-21T13:39:52.183+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3368) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-07-21T13:39:52.210+0000] {standard_task_runner.py:63} INFO - Started process 3383 to run task
+[2026-07-21T13:39:52.649+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_delay_risk_pipeline.fetch_flights scheduled__2026-07-20T06:00:00+00:00 [running]> on host 77ea538c3414
+[2026-07-21T13:39:53.062+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='taha' AIRFLOW_CTX_DAG_ID='weather_delay_risk_pipeline' AIRFLOW_CTX_TASK_ID='fetch_flights' AIRFLOW_CTX_EXECUTION_DATE='2026-07-20T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-20T06:00:00+00:00'
+[2026-07-21T13:39:53.065+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-21T13:40:00.615+0000] {logging_mixin.py:188} INFO - ✈️ Fetching flight data...
+[2026-07-21T13:40:04.095+0000] {logging_mixin.py:188} INFO - ✅ Saved: data/raw/flights/2026-07-21/JFK.json
+[2026-07-21T13:40:04.839+0000] {logging_mixin.py:188} INFO - ✅ Saved: data/raw/flights/2026-07-21/LAX.json
+[2026-07-21T13:40:05.387+0000] {logging_mixin.py:188} INFO - ✅ Saved: data/raw/flights/2026-07-21/ORD.json
+[2026-07-21T13:40:05.916+0000] {logging_mixin.py:188} INFO - ✅ Saved: data/raw/flights/2026-07-21/ATL.json
+[2026-07-21T13:40:06.422+0000] {logging_mixin.py:188} INFO - ✅ Saved: data/raw/flights/2026-07-21/DFW.json
+[2026-07-21T13:40:06.423+0000] {logging_mixin.py:188} INFO - ✅ Flights fetched
+[2026-07-21T13:40:06.425+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-07-21T13:40:06.426+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-21T13:40:06.454+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_delay_risk_pipeline, task_id=fetch_flights, run_id=scheduled__2026-07-20T06:00:00+00:00, execution_date=20260720T060000, start_date=20260721T133951, end_date=20260721T134006
+[2026-07-21T13:40:06.548+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-07-21T13:40:06.682+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-07-21T13:40:06.703+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

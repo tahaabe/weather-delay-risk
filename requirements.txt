@@ -1,0 +1,8 @@
+requests
+pandas
+boto3
+pyarrow
+python-dotenv
+fastapi
+uvicorn
+apache-airflow
